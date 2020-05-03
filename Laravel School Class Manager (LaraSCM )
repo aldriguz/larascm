@@ -1,0 +1,11 @@
+Laravel School Class Manager (LaraSCM )
+-- Aplicacion de registros y material educativo
+
+-------Modules-------
+- login
+- usuarios: alumnos, profesores, admin
+- alumnos
+- personas:
+- roles & access
+- templates management
+- reports
