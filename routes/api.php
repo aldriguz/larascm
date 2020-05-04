@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::apiResources([
+    'classrooms' => 'API\ClassroomController',
+    'managers' => 'API\ManagerController', 
+    'students' => 'API\StudentController',
+    'teachers' => 'API\TeacherController',
+    'persons' => 'API\PersonController'
+]);
