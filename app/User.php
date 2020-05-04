@@ -36,4 +36,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Used by teacher to login
+     */
+    public function teacher()
+    {
+        return $this->belongsTo('App\Teacher');
+    }
+
+    /**
+     * Used by manager to login
+     */
+    public function manager()
+    {
+        return $this->belongsTo('App\Manager');
+    }
 }
