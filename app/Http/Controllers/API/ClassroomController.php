@@ -42,7 +42,9 @@ class ClassroomController extends Controller
      */
     public function show($id)
     {
-        
+        $classroom = new Classroom::find($id);
+
+        return response()->json($classroom);
     }
 
     /**
@@ -54,7 +56,14 @@ class ClassroomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $classroom = new Classroom::find($id);
+
+        $classroom->name = $request->name; 
+        $classroom->description = $request->description;
+
+        $classroom->save();
+
+        return response()->json($classroom);
     }
 
     /**
@@ -65,6 +74,10 @@ class ClassroomController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $classroom = new Classroom::find($id);
+
+        $classroom->delete();
+
+        return response(200);
     }
 }
