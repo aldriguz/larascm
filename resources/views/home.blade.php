@@ -3,7 +3,18 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-3">
+            <div class="list-group">
+              <button type="button" class="list-group-item list-group-item-action active">
+                Mi lista de alumnos
+              </button>
+              <button type="button" class="list-group-item list-group-item-action">Subir nueva lista</button>
+              <button type="button" class="list-group-item list-group-item-action">Crear documento</button>
+              <button type="button" class="list-group-item list-group-item-action" disabled>Configuracion</button>
+            </div>
+
+        </div>
+        <div class="col-md-9">
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
