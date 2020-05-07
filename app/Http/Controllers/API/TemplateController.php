@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Template;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class TemplateController extends Controller
      */
     public function index()
     {
-        return response()->json(Teacher::where('is_active', true)->get());
+        return response()->json(Template::where('is_active', true)->get());
     }
 
     /**
