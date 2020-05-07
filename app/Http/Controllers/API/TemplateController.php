@@ -5,7 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PersonController extends Controller
+class TemplateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class PersonController extends Controller
      */
     public function index()
     {
-        return response()->json(['test' => 'aa']);
+        return response()->json(Teacher::where('is_active', true)->get());
     }
 
     /**
@@ -25,7 +25,7 @@ class PersonController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        throw new Exception('Not implemented');
     }
 
     /**
@@ -36,7 +36,7 @@ class PersonController extends Controller
      */
     public function show($id)
     {
-        //
+        throw new Exception('Not implemented');
     }
 
     /**
@@ -48,7 +48,7 @@ class PersonController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        throw new Exception('Not implemented');
     }
 
     /**
@@ -59,6 +59,6 @@ class PersonController extends Controller
      */
     public function destroy($id)
     {
-        //
+        throw new Exception('Not implemented');
     }
 }
