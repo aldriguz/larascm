@@ -6,15 +6,53 @@
         <div class="col-md-3">
             <div class="list-group">
               <button type="button" class="list-group-item list-group-item-action active">
-                Mi lista de alumnos
+                <i class="fas fa-camera"></i> Mi lista de alumnos
               </button>
-              <button type="button" class="list-group-item list-group-item-action">Subir nueva lista</button>
+              <button type="button" class="list-group-item list-group-item-action"><i class="fas fa-camera"></i> Subir nueva lista</button>
               <button type="button" class="list-group-item list-group-item-action">Crear documento</button>
               <button type="button" class="list-group-item list-group-item-action" disabled>Configuracion</button>
             </div>
-
         </div>
+
         <div class="col-md-9">
+            <h3>Bootstrap heading</h3>
+            <button type="button" class="btn btn-outline-primary">Primary</button>
+            <button type="button" class="btn btn-outline-secondary">Secondary</button>
+            <button type="button" class="btn btn-outline-success">Success</button>
+
+
+             <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td colspan="2">Larry the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>   
+        </div>
+
+        {{--<div class="col-md-9">
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
@@ -28,7 +66,7 @@
                     You are logged in!
                 </div>
             </div>
-        </div>
+        </div>--}}
     </div>
 </div>
 @endsection
