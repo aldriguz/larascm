@@ -18,9 +18,9 @@
                 </tr>
               </thead>
               <tbody>                
-                @foreach ($students as $student)                                        
+                @foreach ($students as $key=>$student)                                        
                   <tr>
-                    <th scope="row">{{ $student->id }}</th>
+                    <th scope="row">{{ $key+1 }}</th>
                     <td>{{ $student->name }}</td>
                     <td>{{ $student->father_lastname }} {{ $student->mother_lastname }}</td>
                   </tr>
