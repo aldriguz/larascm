@@ -15,7 +15,7 @@ class ClassroomController extends Controller
      */
     public function index()
     {
-        return response()->json(Classroom::all());
+        return response(Classroom::all());
     }
 
     /**

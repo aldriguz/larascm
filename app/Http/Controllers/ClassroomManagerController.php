@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Classroom;
+//use App\Student;
 
 class ClassroomManagerController extends Controller
 {    
@@ -16,7 +17,7 @@ class ClassroomManagerController extends Controller
     {
         $classrooms = Classroom::all();
 
-        return view('scm.classroom.open', $classrooms);
+        return view('scm.classroom.open')->with('classrooms', $classrooms);
     }
 
     /**
@@ -24,10 +25,14 @@ class ClassroomManagerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function set_classroom(Request $request)
+    public function classroom_selected(Request $request)
     {
-        $classrooms = Classroom::all();
+        $classrooms_id = $request->input('classroom-id');        
 
-        return view('scm.classroom.open', $classrooms);
+        $students = Classroom::find($classrooms_id)->students;
+
+        //return response()->json([$students, Classroom::find($classrooms_id)]);
+
+        return view('scm.classroom.list')->with('students', $students);
     }
 }

@@ -23,4 +23,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/classroom-manager', 'ClassroomManagerController@choose')->middleware('auth');
-Route::post('/classroom-manager', 'ClassroomManagerController@choose')->middleware('auth');
+Route::post('/classroom-manager', 'ClassroomManagerController@classroom_selected')->middleware('auth')->name('classroom-manager');

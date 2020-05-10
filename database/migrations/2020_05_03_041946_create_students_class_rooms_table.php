@@ -13,10 +13,10 @@ class CreateStudentsClassRoomsTable extends Migration
      */
     public function up()
     {
-        Schema::create('students_classrooms', function (Blueprint $table) {
+        Schema::create('classroom_student', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('student_id')->constrained();
             $table->foreignId('classroom_id')->constrained();
+            $table->foreignId('student_id')->constrained();            
             $table->timestamps();
         });
     }
@@ -28,11 +28,11 @@ class CreateStudentsClassRoomsTable extends Migration
      */
     public function down()
     {
-        Schema::create('students_classrooms', function (Blueprint $table) {            
-            $table->dropForeign('students_classrooms_student_id_foreign');
-            $table->dropForeign('students_classrooms_classroom_id_foreign');
+        Schema::table('classroom_student', function (Blueprint $table) {            
+            $table->dropForeign('classroom_student_classroom_id_foreign');
+            $table->dropForeign('classroom_student_student_id_foreign');
         });
 
-        Schema::dropIfExists('students_classrooms');
+        Schema::dropIfExists('classroom_student');
     }
 }
