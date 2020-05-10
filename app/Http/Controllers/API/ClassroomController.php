@@ -32,6 +32,8 @@ class ClassroomController extends Controller
         $classroom->description = $request->description;
 
         $classroom->save();
+
+        return response(200);
     }
 
     /**
