@@ -11,9 +11,9 @@ class StudentManagerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($classroom_id)
     {
-        return view('scm.student.create');
+        return view('scm.student.create')->with('classroom_id', $classroom_id);
     }
 
     /**
@@ -29,10 +29,11 @@ class StudentManagerController extends Controller
         $student->name = $request->input('name');
         $student->father_lastname = $request->input('father-lastname');
         $student->mother_lastname = $request->input('mother-lastname');
+        $student->email = $request->input('email');
 
         $student->save();
 
-
+        return redirect()->route('classrooms.students', ['classroom_id' => $classroom_id]);
     }
 
     

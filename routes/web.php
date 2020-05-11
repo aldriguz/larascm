@@ -37,7 +37,7 @@ Route::get('/classrooms/{classroom_id}/students', 'ClassroomManagerController@st
 
 
 
-Route::get('/classrooms/{classroom_id}/students/create', 'ClassroomManagerController@create_student')
+Route::get('/classrooms/{classroom_id}/students/create', 'StudentManagerController@create')
         ->middleware('auth') 
         ->name('classrooms.students.create');  
         

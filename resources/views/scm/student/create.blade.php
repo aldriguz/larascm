@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <form method="POST" action="{{ route('classrooms.students.create') }}">
+    <form method="POST" action="{{ route('classrooms.students.create', ['classroom_id' => $classroom_id]) }}">
         <div class="form-group">
             <label for="name">Nombres</label>
             <input type="text" class="form-control" id="name">        
@@ -30,6 +30,7 @@
         </div>
                 
         <button type="submit" class="btn btn-primary">Registrar alumno</button>
+        <button type="submit" class="btn btn-secondary">Regresar a listado</button>
     </form>
 </div>
 @endsection
