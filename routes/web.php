@@ -22,5 +22,25 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/classroom-manager', 'ClassroomManagerController@choose')->middleware('auth');
-Route::post('/classroom-manager', 'ClassroomManagerController@classroom_selected')->middleware('auth')->name('classroom-manager');
+Route::get('/classrooms', 'ClassroomManagerController@choose')
+        ->middleware('auth')
+        ->name('classrooms');      
+
+Route::post('/classrooms', 'ClassroomManagerController@select_classroom')
+        ->middleware('auth')
+        ->name('classrooms');      
+
+Route::get('/classrooms/{classroom_id}/students', 'ClassroomManagerController@students')
+        ->middleware('auth')
+        ->name('classrooms.students');
+
+
+
+
+Route::get('/classrooms/{classroom_id}/students/create', 'ClassroomManagerController@create_student')
+        ->middleware('auth') 
+        ->name('classrooms.students.create');  
+        
+Route::post('/classrooms/{classroom_id}/students', 'StudentManagerController@store')
+        ->middleware('auth')
+        ->name('classrooms.students.store');  

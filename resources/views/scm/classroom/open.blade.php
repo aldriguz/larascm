@@ -8,7 +8,7 @@
                 <div class="card-header"><b>Selecciona el aula que tienes a cargo antes de continuar</b></div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('classroom-manager') }}">
+                    <form method="POST" action="{{ route('classrooms') }}">
                         @csrf
 
                         <div class="form-group row">
