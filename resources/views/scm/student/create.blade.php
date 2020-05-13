@@ -2,7 +2,9 @@
 
 @section('content')
 <div class="container">
-    <form method="POST" action="{{ route('classrooms.students.create', ['classroom_id' => $classroom_id]) }}">
+    <form method="POST" action="{{ route('classrooms.students.store', ['classroom_id' => $classroom_id]) }}">
+        @csrf
+
         <div class="form-group">
             <label for="name">Nombres</label>
             <input type="text" class="form-control" id="name">        
@@ -29,8 +31,8 @@
              @enderror
         </div>
                 
-        <button type="submit" class="btn btn-primary">Registrar alumno</button>
-        <button type="submit" class="btn btn-secondary">Regresar a listado</button>
+        <button type="submit" class="btn btn-primary">Registrar alumno</button>            
+        <a class="btn btn-secondary" href="{{ route('classrooms.students', ['classroom_id' => $classroom_id]) }}" role="button">Regresar a listado</a>
     </form>
 </div>
 @endsection
