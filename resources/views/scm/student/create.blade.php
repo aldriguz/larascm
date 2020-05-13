@@ -7,17 +7,17 @@
 
         <div class="form-group">
             <label for="name">Nombres</label>
-            <input type="text" class="form-control" id="name">        
+            <input type="text" class="form-control" id="name" name="name">        
         </div>
 
         <div class="form-group">
             <label for="father-lastname">Apellido Paterno</label>
-            <input type="text" class="form-control" id="father-lastname">        
+            <input type="text" class="form-control" id="father-lastname" name="father-lastname">        
         </div>
 
         <div class="form-group">
             <label for="mother-lastname">Apellido Materno</label>
-            <input type="text" class="form-control" id="mother-lastname">        
+            <input type="text" class="form-control" id="mother-lastname" name="mother-lastname">        
         </div>
 
         <div class="form-group">

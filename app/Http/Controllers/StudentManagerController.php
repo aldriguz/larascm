@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Student;
+use App\Classroom;
 use Illuminate\Http\Request;
 
 class StudentManagerController extends Controller
@@ -25,14 +26,16 @@ class StudentManagerController extends Controller
      */
     public function store($classroom_id, Request $request)
     {
+        $classroom = Classroom::find($classroom_id);
+
         $student = new Student;
 
         $student->name = $request->input('name');
         $student->father_lastname = $request->input('father-lastname');
         $student->mother_lastname = $request->input('mother-lastname');
         $student->email = $request->input('email');
-
-        $student->save();
+        
+        $classroom->students()->save($student);
 
         return redirect()->route('classrooms.students', ['classroom_id' => $classroom_id]);
     }

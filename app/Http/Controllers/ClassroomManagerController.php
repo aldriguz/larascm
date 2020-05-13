@@ -45,7 +45,8 @@ class ClassroomManagerController extends Controller
     public function students($classroom_id)
     {
         //$classrooms = Classroom::all();
-        $students = Classroom::find($classroom_id)->students;
+        $students = Classroom::find($classroom_id)
+                        ->students;
 
         return view('scm.classroom.list')
                 ->with('students', $students)
