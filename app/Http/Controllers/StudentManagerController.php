@@ -17,7 +17,7 @@ class StudentManagerController extends Controller
     {
         return view('scm.student.create')->with('classroom_id', $classroom_id);
     }
-
+ 
     /**
      * Store a newly created resource in storage.
      *
