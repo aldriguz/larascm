@@ -34,9 +34,6 @@ Route::get('/classrooms/{classroom_id}/students', 'ClassroomManagerController@st
         ->middleware('auth')
         ->name('classrooms.students');
 
-
-
-
 Route::get('/classrooms/{classroom_id}/students/create', 'StudentManagerController@create')
         ->middleware('auth') 
         ->name('classrooms.students.create');  
@@ -44,3 +41,8 @@ Route::get('/classrooms/{classroom_id}/students/create', 'StudentManagerControll
 Route::post('/classrooms/{classroom_id}/students', 'StudentManagerController@store')
         ->middleware('auth')
         ->name('classrooms.students.store');  
+
+Route::get('/classrooms/{classroom_id}/students/upload', 'StudentManagerController@upload')
+        ->middleware('auth') 
+        ->name('classrooms.students.upload');  
+       
