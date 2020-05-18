@@ -57,6 +57,10 @@ class StudentManagerController extends Controller
      */
     public function bulk_store($classroom_id, Request $request)
     {
+
+
+
+        
         return view('scm.student.bulk')->with('classroom_id', $classroom_id);
     }
 
