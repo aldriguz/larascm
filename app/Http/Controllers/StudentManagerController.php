@@ -57,12 +57,38 @@ class StudentManagerController extends Controller
      */
     public function bulk_store($classroom_id, Request $request)
     {
-
-
-
-        
         return view('scm.student.bulk')->with('classroom_id', $classroom_id);
     }
 
-    
+    /**
+     * Read information from file to show in view
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function bulk_preview($classroom_id, Request $request)
+    {
+        //$array = Excel::toArray(new UsersImport, 'users.xlsx');
+
+        $collection = Excel::toCollection(new StudentsImport, $request->file('students'));
+
+        //Excel::import(new StudentsImport, $request->file('students'));
+
+        return redirect()->route('json_view', ['data' => $collection]);
+    }
+
+    /**
+     * Read information from file to show in view
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function download($classroom_id, Request $request)
+    {
+        //$array = Excel::toArray(new UsersImport, 'users.xlsx');
+
+        $collection = Excel::toCollection(new StudentsImport, $request->file('students'));
+
+        //Excel::import(new StudentsImport, $request->file('students'));
+
+        return redirect()->route('json_view', ['data' => $collection]);
+    }
 }

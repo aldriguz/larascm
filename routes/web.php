@@ -49,4 +49,12 @@ Route::get('/classrooms/{classroom_id}/students/upload', 'StudentManagerControll
 Route::post('/classrooms/{classroom_id}/students/bulk', 'StudentManagerController@bulk_store')
         ->middleware('auth') 
         ->name('classrooms.students.bulk');  
+
+Route::post('/classrooms/{classroom_id}/students/bulk_preview', 'StudentManagerController@bulk_preview')
+        ->middleware('auth') 
+        ->name('classrooms.students.bulk_preview');          
         
+/**
+ * Json information routes
+ */
+Route::get('/json_view', 'PreviewDataController@load')->name('json_view');  
