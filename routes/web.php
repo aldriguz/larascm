@@ -45,4 +45,8 @@ Route::post('/classrooms/{classroom_id}/students', 'StudentManagerController@sto
 Route::get('/classrooms/{classroom_id}/students/upload', 'StudentManagerController@upload')
         ->middleware('auth') 
         ->name('classrooms.students.upload');  
-       
+
+Route::post('/classrooms/{classroom_id}/students/bulk', 'StudentManagerController@bulk_store')
+        ->middleware('auth') 
+        ->name('classrooms.students.bulk');  
+        

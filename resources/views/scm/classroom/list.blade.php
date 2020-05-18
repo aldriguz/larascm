@@ -6,7 +6,7 @@
         <div class="col-md-10">
             <h3>Lista de alumnos</h3>            
             <a class="btn btn-primary" href="{{ route('classrooms.students.create', ['classroom_id' => $classroom_id]) }}" role="button">Registrar nuevo alumno</a>
-            <button type="button" class="btn btn-outline-primary hidden">Subir lista de alumnos</button>
+            <a class="btn btn-secondary" href="{{ route('classrooms.students.upload', ['classroom_id' => $classroom_id]) }}" role="button">Subir lista de alumnos</a>            
             
             <br><br>  
              <table class="table table-hover">
