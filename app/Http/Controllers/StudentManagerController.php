@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use App\Classroom;
+use App\Exports\StudentsExport;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Excel;
 
 class StudentManagerController extends Controller
 {
@@ -82,13 +84,8 @@ class StudentManagerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function download($classroom_id, Request $request)
-    {
-        //$array = Excel::toArray(new UsersImport, 'users.xlsx');
-
-        $collection = Excel::toCollection(new StudentsImport, $request->file('students'));
-
-        //Excel::import(new StudentsImport, $request->file('students'));
-
-        return redirect()->route('json_view', ['data' => $collection]);
+    {               
+        return Excel::download(new UsersExport, 'students.xlsx');
+        //return redirect()->route('json_view', ['data' => $collection]);
     }
 }

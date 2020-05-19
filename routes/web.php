@@ -52,7 +52,11 @@ Route::post('/classrooms/{classroom_id}/students/bulk', 'StudentManagerControlle
 
 Route::post('/classrooms/{classroom_id}/students/bulk_preview', 'StudentManagerController@bulk_preview')
         ->middleware('auth') 
-        ->name('classrooms.students.bulk_preview');          
+        ->name('classrooms.students.bulk_preview');        
+
+Route::get('/classrooms/{classroom_id}/students/download', 'StudentManagerController@download')
+        ->middleware('auth') 
+        ->name('classrooms.students.download');    
         
 /**
  * Json information routes
