@@ -13,6 +13,7 @@
                 </div>
                 <br><br>  
                 <button type="submit" class="btn btn-primary">Registrar alumno</button>
+                <a class="btn btn-secondary" href="{{ route('classrooms.students.download', ['classroom_id' => $classroom_id]) }}" role="button">Descargar listado alumnos</a>            
             </form>
         </div>       
     </div>

@@ -54,7 +54,7 @@ Route::post('/classrooms/{classroom_id}/students/bulk_preview', 'StudentManagerC
         ->middleware('auth') 
         ->name('classrooms.students.bulk_preview');        
 
-Route::get('/classrooms/{classroom_id}/students/download', 'StudentManagerController@download')
+Route::get('/classrooms/{classroom_id}/students/download', 'ExportController@download')
         ->middleware('auth') 
         ->name('classrooms.students.download');    
         
