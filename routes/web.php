@@ -50,7 +50,7 @@ Route::post('/classrooms/{classroom_id}/students/bulk', 'StudentManagerControlle
         ->middleware('auth') 
         ->name('classrooms.students.bulk');  
 
-Route::post('/classrooms/{classroom_id}/students/bulk_preview', 'StudentManagerController@bulk_preview')
+Route::post('/classrooms/{classroom_id}/students/bulk_preview', 'ExportController@preview')
         ->middleware('auth') 
         ->name('classrooms.students.bulk_preview');        
 

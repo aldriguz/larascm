@@ -4,8 +4,9 @@ namespace App\Exports;
 
 use App\Student;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-class StudentsExport implements FromCollection
+class StudentsExport implements FromCollection, ShouldAutoSize
 {
     /**
     * @return \Illuminate\Support\Collection

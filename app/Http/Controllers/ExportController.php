@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exports\StudentsExport;
-use App\Exports\StudentsImport;
+use App\Imports\StudentsImport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Exporter;
 
@@ -33,7 +33,7 @@ class ExportController extends Controller
      */
     public function preview($classroom_id, Request $request)
     {
-        $collection = Excel::toCollection(new StudentsImport, $request->file('students'));
+        $collection = $this->exporter->toCollection(new StudentsImport, $request->file('students'), \Maatwebsite\Excel\Excel::XLSX);
 
         //Excel::import(new StudentsImport, $request->file('students'));
 

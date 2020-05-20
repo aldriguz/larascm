@@ -6,7 +6,9 @@
         <div class="col-md-10">
             <h3>Subir una lista de alumnos</h3>        
             <br><br>  
-            <form method="GET" action="{{ route('classrooms.students.download', ['classroom_id' => $classroom_id]) }}">
+            <form method="POST" action="{{ route('classrooms.students.bulk_preview', ['classroom_id' => $classroom_id]) }}">
+                @csrf
+                
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" id="students_file" name="students_file">
                     <label class="custom-file-label" for="customFile">Choose file</label>
