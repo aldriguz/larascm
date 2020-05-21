@@ -1,4 +1,4 @@
-##LaraSCM
+## LaraSCM
 
 ### About LaraSCM
 
