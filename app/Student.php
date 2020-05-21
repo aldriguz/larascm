@@ -21,6 +21,6 @@ class Student extends Model
     public function classrooms()
     {
         return $this->belongsToMany('App\Classroom');
-    }
+    }   
 
 }
