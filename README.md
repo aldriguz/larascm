@@ -9,7 +9,7 @@ LaraSCM is an aplication that provides a simple school classroom students list m
 - As a teacher (user) you could have more than one classroom
 - Import process of a students list (excel & csv)
 - Download reports of students based on templates
-- Manage students inside a classroom (remov & add)
+- Manage students inside a classroom (remove & add)
 
 ### License
 
