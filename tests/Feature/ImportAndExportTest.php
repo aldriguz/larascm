@@ -11,20 +11,9 @@ use Tests\TestCase;
 
 class ImportAndExportTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function testExample()
-    {
-        $response = $this->get('/');
+    
 
-        $response->assertStatus(200);
-    }
-
-
-    public function import_list_of_students(){
+    public function test_import_list_of_students(){
 
         Excel::fake();
     
