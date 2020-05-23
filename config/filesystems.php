@@ -67,7 +67,7 @@ return [
 
         'temps' => [
             'driver' => 'local',
-            'root' => storage_path('storage/files'),
+            'root' => storage_path('temps'),
         ]
     ],
 
