@@ -6,6 +6,7 @@ use App\Exports\StudentsExport;
 use App\Imports\StudentsImport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Exporter;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ExportController extends Controller
 {

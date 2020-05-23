@@ -23,39 +23,39 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/classrooms', 'ClassroomManagerController@choose')
-        ->middleware('auth')
+        //->middleware('auth')
         ->name('classrooms');      
 
 Route::post('/classrooms', 'ClassroomManagerController@select_classroom')
-        ->middleware('auth')
+        //->middleware('auth')
         ->name('classrooms');      
 
 Route::get('/classrooms/{classroom_id}/students', 'ClassroomManagerController@students')
-        ->middleware('auth')
+        //->middleware('auth')
         ->name('classrooms.students');
 
 Route::get('/classrooms/{classroom_id}/students/create', 'StudentManagerController@create')
-        ->middleware('auth') 
+        //->middleware('auth') 
         ->name('classrooms.students.create');  
         
 Route::post('/classrooms/{classroom_id}/students', 'StudentManagerController@store')
-        ->middleware('auth')
+        //->middleware('auth')
         ->name('classrooms.students.store');  
 
 Route::get('/classrooms/{classroom_id}/students/upload', 'StudentManagerController@upload')
-        ->middleware('auth') 
+        //->middleware('auth') 
         ->name('classrooms.students.upload');  
 
 Route::post('/classrooms/{classroom_id}/students/bulk', 'StudentManagerController@bulk_store')
-        ->middleware('auth') 
+        //->middleware('auth') 
         ->name('classrooms.students.bulk');  
 
 Route::post('/classrooms/{classroom_id}/students/bulk_preview', 'ExportController@preview')
-        ->middleware('auth') 
+        //->middleware('auth') 
         ->name('classrooms.students.bulk_preview');        
 
 Route::get('/classrooms/{classroom_id}/students/download', 'ExportController@download')
-        ->middleware('auth') 
+        //->middleware('auth') 
         ->name('classrooms.students.download');    
         
 /**
