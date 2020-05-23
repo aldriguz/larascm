@@ -1,5 +1,7 @@
 ## LaraSCM
 
+Laravel School classroom manager
+
 ### About LaraSCM
 
 LaraSCM is an aplication that provides a simple school classroom students list management, that provides templates to export and render to pdf, html, excel, etc.
