@@ -12,8 +12,8 @@ class ImportAndExportTest extends TestCase
 {    
     public function test_import_list_of_students(){
 
-        //Excel::fake();    
-        Excel::assertImported('students.xlsx');
+        Excel::fake();    
+        Excel::assertImported('students.xlsx', 'temps');
         
         // When passing the callback as 2nd param, the disk will be the default disk.
         /*Excel::assertImported('filename.xlsx', function(StudentsImport $import) {
