@@ -10,9 +10,7 @@ use App\Imports\StudentsImport;
 use Tests\TestCase;
 
 class ImportAndExportTest extends TestCase
-{
-    
-
+{    
     public function test_import_list_of_students(){
 
         Excel::fake();
