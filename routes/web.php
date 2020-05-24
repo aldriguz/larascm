@@ -57,8 +57,17 @@ Route::post('/classrooms/{classroom_id}/students/bulk_preview', 'ExportControlle
 Route::get('/classrooms/{classroom_id}/students/download', 'ExportController@download')
         //->middleware('auth') 
         ->name('classrooms.students.download');    
-        
+
+Route::get('/classrooms/{classroom_id}/students/import', 'ImportController@import_students')
+        //->middleware('auth') 
+        ->name('classrooms.students.import');
+
+
 /**
  * Json information routes
  */
 Route::get('/json_view', 'PreviewDataController@load')->name('json_view');  
+
+Route::get('/students/import', 'ImportController@import_students')
+        //->middleware('auth') 
+        ->name('students.import');
