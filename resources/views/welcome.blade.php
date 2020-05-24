@@ -79,6 +79,11 @@
                 </div>
             @endif
 
+            @isset($success)
+            <div role="alert">
+                {{ $success }}
+            </div>
+            @endisset
             <div class="content">
                 <div class="title m-b-md">
                     Laravel SCM

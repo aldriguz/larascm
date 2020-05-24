@@ -2,17 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        {{--<div class="col-md-3">
-            <div class="list-group">
-              <button type="button" class="list-group-item list-group-item-action active">
-                <i class="fas fa-camera"></i> Mi lista de alumnos
-              </button>
-              <button type="button" class="list-group-item list-group-item-action"><i class="fas fa-camera"></i> Subir nueva lista</button>
-              <button type="button" class="list-group-item list-group-item-action">Crear documento</button>
-              <button type="button" class="list-group-item list-group-item-action" disabled>Configuracion</button>
-            </div>
-        </div>--}}
+    <div class="row justify-content-center">       
 
         <div class="col-md-10">
             <h3>Bootstrap heading</h3>
