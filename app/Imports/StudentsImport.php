@@ -3,7 +3,9 @@
 namespace App\Imports;
 
 use App\Student;
+use App\Classroom;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Illuminate\Support\Facades\Log;
 
 class StudentsImport implements ToModel
 {
@@ -11,6 +13,8 @@ class StudentsImport implements ToModel
 
     function __construct($classroom_id)
     {
+        Log::debug('Classroom: ' . $classroom_id);
+
         $this->$classroom_id = $classroom_id;
     }
 
@@ -22,11 +26,28 @@ class StudentsImport implements ToModel
     */
     public function model(array $row)
     {
-        return new Student([
+        $classroom = new Classroom;
+
+        if(!is_null($classroom_id))
+        {
+            Log::debug('Classroom: instance');
+
+            $classroom = Classroom::find($classroom_id);
+        }
+
+        $student = new Student([
             'name'     => $row[0],
             'father_lastname'    => $row[1], 
             'mother_lastname' => $row[2]
-        ]);
+        ]); 
+
+        if(!is_null($classroom))
+        {
+            Log::debug('Classroom relation');
+            $classroom->students()->save($student);
+        }
+
+        return $student;
     }
 
     /**
@@ -36,13 +57,28 @@ class StudentsImport implements ToModel
     */
     public function collection(Collection $rows)
     {
+        $classroom = new Classroom;
+
+        if(!is_null($classroom_id))
+        {
+            Log::debug('Classroom: instance');
+
+            $classroom = Classroom::find($classroom_id);
+        }
+
         foreach ($rows as $row) 
         {
-            Student::create([
+            $student = Student::create([
                 'name'     => $row[0],
                 'father_lastname'    => $row[1], 
                 'mother_lastname' => $row[2]
             ]);
+
+            if(!is_null($classroom))
+            {
+                Log::debug('Classroom relation');
+                $classroom->students()->save($student);
+            }            
         }
     }
 }

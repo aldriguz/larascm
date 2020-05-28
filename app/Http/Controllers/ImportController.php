@@ -15,7 +15,7 @@ class ImportController extends Controller
      */
     public function students($classroom_id, Request $request)
     {
-        Excel::import(new StudentsImport($classroom_id), $request->file('students_file'), \Maatwebsite\Excel\Excel::CSV);
+        Excel::import(new StudentsImport($classroom_id), $request->file('students_file'), null,  \Maatwebsite\Excel\Excel::CSV);
                  
         return view('classrooms.students')
                 ->with('classroom_id', $classroom_id)
@@ -31,7 +31,7 @@ class ImportController extends Controller
     {
         Excel::import(new StudentsImport($classroom_id), 'students.csv', null, \Maatwebsite\Excel\Excel::CSV);
                  
-        return response(200);
+        return response('Exito!', 200);
     }
     
 }

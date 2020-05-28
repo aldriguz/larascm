@@ -35,7 +35,7 @@ class ImportAndExportTest extends TestCase
 
         $this->get('/import/1');
 
-        Excel::assertImported('students.csv', 'local');
+        Excel::assertImported('students.csv');
                
     }
     
