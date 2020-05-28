@@ -18,24 +18,25 @@ class ImportAndExportTest extends TestCase
         $this->assertTrue(Storage::disk('local')->exists('file.txt'));
         
     }
-       
+    
+    /*
     public function test_import_students_get_call(){
         
         $response = $this->get('/students/import');
 
         $response->assertStatus(200);
         
-    }
+    }*/
 
-    /*
+    
     public function test_import_list_of_students_from_storage(){
 
         Excel::fake();    
 
-        $this->get('/students/import');
+        $this->get('/import/1');
 
-        Excel::assertImported('students.xlsx', 'local');
+        Excel::assertImported('students.csv', 'local');
                
     }
-    */
+    
 }

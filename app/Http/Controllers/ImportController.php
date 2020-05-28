@@ -21,5 +21,17 @@ class ImportController extends Controller
                 ->with('classroom_id', $classroom_id)
                 ->with('import_successful', 'Acaba de registrar a los alumnos correctamente');
     }
+
+    /**
+     * Import students
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function students_file($classroom_id)
+    {
+        Excel::import(new StudentsImport($classroom_id), 'students.csv', null, \Maatwebsite\Excel\Excel::CSV);
+                 
+        return response(200);
+    }
     
 }
