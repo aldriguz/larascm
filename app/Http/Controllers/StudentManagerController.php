@@ -6,7 +6,7 @@ use App\Student;
 use App\Classroom;
 use App\Exports\StudentsExport;
 use Illuminate\Http\Request;
-use Maatwebsite\Excel\Excel;
+use Maatwebsite\Excel\Facades\Excel;
 
 class StudentManagerController extends Controller
 {
@@ -57,8 +57,14 @@ class StudentManagerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function bulk_store($classroom_id, Request $request)
+    public function bulk($classroom_id, Request $request)
     {
+        Excel::import(new StudentsImport, 'students.csv', null, \Maatwebsite\Excel\Excel::CSV);
+
+        
+
+
+
         return view('scm.student.bulk')->with('classroom_id', $classroom_id);
     }
     
