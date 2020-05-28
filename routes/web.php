@@ -46,26 +46,9 @@ Route::get('/classrooms/{classroom_id}/students/upload', 'StudentManagerControll
         //->middleware('auth') 
         ->name('classrooms.students.upload');  
 
-Route::post('/classrooms/{classroom_id}/students/bulk', 'StudentManagerController@bulk')
+Route::post('/classrooms/{classroom_id}/imports/students', 'ImportController@students')
         //->middleware('auth') 
-        ->name('classrooms.students.bulk');  
-
-
-
-
-
-
-Route::post('/classrooms/{classroom_id}/students/upload', 'ExportController@upload')
-        //->middleware('auth') 
-        ->name('classrooms.students.upload');        
-
-Route::get('/classrooms/{classroom_id}/students/download', 'ExportController@download')
-        //->middleware('auth') 
-        ->name('classrooms.students.download');    
-
-Route::get('/classrooms/{classroom_id}/students/import', 'ImportController@import_students')
-        //->middleware('auth') 
-        ->name('classrooms.students.import');
+        ->name('classrooms.imports.students');
 
 
 /**
@@ -73,6 +56,3 @@ Route::get('/classrooms/{classroom_id}/students/import', 'ImportController@impor
  */
 Route::get('/json_view', 'PreviewDataController@load')->name('json_view');  
 
-Route::get('/students/import', 'ImportController@import_students')
-        //->middleware('auth') 
-        ->name('students.import');

@@ -4,6 +4,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
+            @isset($import_successful)
+            <div role="alert">
+                {{ $import_successful }}
+            </div><br><br>
+            @endisset
+
             <h3>Lista de alumnos</h3>            
             <a class="btn btn-primary" href="{{ route('classrooms.students.create', ['classroom_id' => $classroom_id]) }}" role="button">Registrar nuevo alumno</a>
             <a class="btn btn-secondary" href="{{ route('classrooms.students.upload', ['classroom_id' => $classroom_id]) }}" role="button">Subir lista de alumnos</a>            

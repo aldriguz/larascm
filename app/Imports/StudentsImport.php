@@ -7,8 +7,7 @@ use Maatwebsite\Excel\Concerns\ToModel;
 
 class StudentsImport implements ToModel
 {
-    private $classroom_id = 0;
-
+    private $classroom_id;
 
     function __construct($classroom_id)
     {
@@ -30,7 +29,7 @@ class StudentsImport implements ToModel
         ]);
     }
 
-     /**
+    /**
     * @param array $row
     *
     * @return \Illuminate\Database\Eloquent\Collection|null

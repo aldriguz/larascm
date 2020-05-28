@@ -51,17 +51,5 @@ class StudentManagerController extends Controller
     {
         return view('scm.student.upload')->with('classroom_id', $classroom_id);
     }
-
-    /**
-     * Store information from file to students list
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function bulk($classroom_id, Request $request)
-    {
-        Excel::import(new StudentsImport($classroom_id), 'students.csv', null, \Maatwebsite\Excel\Excel::CSV);
-        
-        return view('scm.student.bulk')->with('classroom_id', $classroom_id);
-    }
     
 }

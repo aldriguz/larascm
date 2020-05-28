@@ -13,11 +13,13 @@ class ImportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function import_students()
+    public function students($classroom_id, Request $request)
     {
-        Excel::import(new StudentsImport(1), 'students.csv', null, \Maatwebsite\Excel\Excel::CSV);
-
-        return redirect('/')->with('success', 'All good!');   
+        Excel::import(new StudentsImport($classroom_id), $request->file('students_file'), \Maatwebsite\Excel\Excel::CSV);
+                 
+        return view('classrooms.students')
+                ->with('classroom_id', $classroom_id)
+                ->with('import_successful', 'Acaba de registrar a los alumnos correctamente');
     }
     
 }
