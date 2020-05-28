@@ -57,5 +57,5 @@ Route::post('/classrooms/{classroom_id}/imports/students', 'ImportController@stu
 Route::get('/json_view', 'PreviewDataController@load')->name('json_view');  
 
 // route-> /import/{classroom_id}
-Route::get('/import/1', 'ImportController@students_file')
+Route::get('/import/{classroom_id}', 'ImportController@students_file')
         ->name('import');  
