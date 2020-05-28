@@ -15,7 +15,7 @@ class ImportController extends Controller
      */
     public function import_students()
     {
-        Excel::import(new StudentsImport, 'students.csv', null, \Maatwebsite\Excel\Excel::CSV);
+        Excel::import(new StudentsImport(1), 'students.csv', null, \Maatwebsite\Excel\Excel::CSV);
 
         return redirect('/')->with('success', 'All good!');   
     }

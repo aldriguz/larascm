@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Exports\StudentsExport;
-use App\Imports\StudentsImport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Exporter;
 use Maatwebsite\Excel\Facades\Excel;
@@ -26,18 +25,5 @@ class ExportController extends Controller
     {
         return $this->exporter->download(new StudentsExport, 'students.xlsx');
     }
-     
-    /**
-     * Read information from file to show in view
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function preview($classroom_id, Request $request)
-    {
-        $collection = $this->exporter->toCollection(new StudentsImport, $request->file('students'), \Maatwebsite\Excel\Excel::XLSX);
-
-        //Excel::import(new StudentsImport, $request->file('students'));
-
-        return redirect()->route('json_view', ['data' => $collection]);
-    }    
+         
 }

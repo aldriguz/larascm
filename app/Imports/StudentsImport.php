@@ -7,6 +7,15 @@ use Maatwebsite\Excel\Concerns\ToModel;
 
 class StudentsImport implements ToModel
 {
+    private $classroom_id = 0;
+
+
+    function __construct($classroom_id)
+    {
+        $this->$classroom_id = $classroom_id;
+    }
+
+
     /**
     * @param array $row
     *
@@ -17,8 +26,7 @@ class StudentsImport implements ToModel
         return new Student([
             'name'     => $row[0],
             'father_lastname'    => $row[1], 
-            'mother_lastname' => $row[2], 
-            'email' => $row[3]
+            'mother_lastname' => $row[2]
         ]);
     }
 
@@ -34,8 +42,7 @@ class StudentsImport implements ToModel
             Student::create([
                 'name'     => $row[0],
                 'father_lastname'    => $row[1], 
-                'mother_lastname' => $row[2], 
-                'email' => $row[3]
+                'mother_lastname' => $row[2]
             ]);
         }
     }

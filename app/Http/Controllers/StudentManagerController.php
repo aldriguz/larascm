@@ -59,12 +59,8 @@ class StudentManagerController extends Controller
      */
     public function bulk($classroom_id, Request $request)
     {
-        Excel::import(new StudentsImport, 'students.csv', null, \Maatwebsite\Excel\Excel::CSV);
-
+        Excel::import(new StudentsImport($classroom_id), 'students.csv', null, \Maatwebsite\Excel\Excel::CSV);
         
-
-
-
         return view('scm.student.bulk')->with('classroom_id', $classroom_id);
     }
     
