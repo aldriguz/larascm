@@ -29,7 +29,7 @@ class ImportController extends Controller
      */
     public function students_file($classroom_id)
     {
-        Excel::import(new StudentsImport($classroom_id), 'students.csv', null, \Maatwebsite\Excel\Excel::CSV);
+        Excel::import(new StudentsImport($classroom_id), 'students.csv',  \Maatwebsite\Excel\Excel::CSV);
                  
         return response(200);
     }

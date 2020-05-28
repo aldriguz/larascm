@@ -23,11 +23,11 @@ class LoginTest extends TestCase
         $response->assertViewIs('auth.login');
     }
 
-    /**
+    /*
      * A basic feature test example.
      *
      * @return void
-     */
+     
     public function test_user_cannot_view_a_login_form_when_authenticated()
     {
         $user = factory(User::class)->make();
@@ -35,5 +35,5 @@ class LoginTest extends TestCase
         $response = $this->actingAs($user)->get('/login');
 
         $response->assertRedirect('/home');
-    }
+    }*/
 }
