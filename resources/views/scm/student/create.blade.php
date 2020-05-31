@@ -31,7 +31,7 @@
              @enderror
         </div>
                 
-        <button type="submit" class="btn btn-primary">Registrar alumno</button>            
+        <button type="submit" class="btn btn-success">Registrar alumno</button>            
         <a class="btn btn-secondary" href="{{ route('classrooms.students', ['classroom_id' => $classroom_id]) }}" role="button">Regresar a listado</a>
     </form>
 </div>

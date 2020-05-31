@@ -11,7 +11,7 @@
             @endisset
 
             <h3>Lista de alumnos</h3>            
-            <a class="btn btn-primary" href="{{ route('classrooms.students.create', ['classroom_id' => $classroom_id]) }}" role="button">Registrar nuevo alumno</a>
+            <a class="btn btn-success" href="{{ route('classrooms.students.create', ['classroom_id' => $classroom_id]) }}" role="button">Registrar nuevo alumno</a>
             <a class="btn btn-secondary" href="{{ route('classrooms.students.upload', ['classroom_id' => $classroom_id]) }}" role="button">Registrar mas de 1 alumno</a>            
             <a class="btn btn-secondary" href="{{ route('classrooms.students.download', ['classroom_id' => $classroom_id]) }}" role="button">Generar formatos</a>            
             

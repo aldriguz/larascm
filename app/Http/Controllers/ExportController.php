@@ -21,6 +21,16 @@ class ExportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function students($classroom_id, Request $request)
+    {
+        return $this->exporter->download(new StudentsExport, 'students.xlsx');
+    }
+
+    /**
+     * Read information from file to show in view
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function download($classroom_id, Request $request)
     {
         return $this->exporter->download(new StudentsExport, 'students.xlsx');
