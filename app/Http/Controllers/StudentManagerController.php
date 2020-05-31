@@ -59,7 +59,7 @@ class StudentManagerController extends Controller
      */
     public function download($classroom_id)
     {
-        return view('scm.student.upload')->with('classroom_id', $classroom_id);
+        return view('scm.student.download')->with('classroom_id', $classroom_id);
     }
     
 }
