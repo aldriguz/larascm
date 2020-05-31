@@ -6,14 +6,15 @@
         <div class="col-md-10">
             <h3>Subir una lista de alumnos</h3>        
             <br><br>  
-            <form method="POST" action="{{ route('classrooms.imports.students', ['classroom_id' => $classroom_id]) }}">
+            <form method="POST" action="{{ route('classrooms.exports.students', ['classroom_id' => $classroom_id]) }}">
                 @csrf                
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="students_file" name="students_file">
-                    <label class="custom-file-label" for="customFile">Choose file</label>
-                </div>
+                <select>  
+                    <option>Selecciona un formato deseado </option>
+                    <option>Formato fecha </option>
+                </select>
+
                 <br><br>  
-                <button type="submit" class="btn btn-primary">Registrar alumnos</button>                
+                <button type="submit" class="btn btn-primary">Generar formato</button>                
             </form>
         </div>       
     </div>
