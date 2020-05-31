@@ -9,8 +9,9 @@
             <form method="POST" action="{{ route('classrooms.exports.students', ['classroom_id' => $classroom_id]) }}">
                 @csrf                                
                 <div class="form-group">
-                    <label for="file-formats">Selecciona un formato deseado</label>
+                    <label for="file-formats">Formatos disponibles para generar</label>
                     <select class="form-control" id="file-formats">
+                    <option>Selecciona aqui un formato deseado</option>
                     <option>Firmas de padres</option>
                     <option>Asistencia por mes</option>
                     <option>Calificaciones</option>
