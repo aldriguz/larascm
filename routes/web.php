@@ -50,6 +50,10 @@ Route::post('/classrooms/{classroom_id}/imports/students', 'ImportController@stu
         //->middleware('auth') 
         ->name('classrooms.imports.students');
 
+Route::get('/classrooms/{classroom_id}/students/download', 'StudentManagerController@download')
+        //->middleware('auth') 
+        ->name('classrooms.students.upload');  
+
 
 /**
  * Test routes

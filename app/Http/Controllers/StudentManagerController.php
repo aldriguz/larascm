@@ -51,5 +51,15 @@ class StudentManagerController extends Controller
     {
         return view('scm.student.upload')->with('classroom_id', $classroom_id);
     }
+
+     /**
+     * Show the form to upload list of students in file
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function download($classroom_id)
+    {
+        return view('scm.student.upload')->with('classroom_id', $classroom_id);
+    }
     
 }
