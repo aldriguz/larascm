@@ -13,8 +13,7 @@
                     <label class="custom-file-label" for="customFile">Choose file</label>
                 </div>
                 <br><br>  
-                <button type="submit" class="btn btn-primary">Registrar alumnos</button>
-                <!--<a class="btn btn-secondary" href="{{ route('classrooms.students.download', ['classroom_id' => $classroom_id]) }}" role="button">Descargar listado alumnos</a>-->
+                <button type="submit" class="btn btn-primary">Registrar alumnos</button>                
             </form>
         </div>       
     </div>

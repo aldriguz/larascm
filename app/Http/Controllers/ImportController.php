@@ -19,7 +19,7 @@ class ImportController extends Controller
                  
         return view('classrooms.students')
                 ->with('classroom_id', $classroom_id)
-                ->with('import_successful', 'Acaba de registrar a los alumnos correctamente');
+                ->with('import_successful', 'Los alumnos se han registrado correctamente');
     }
 
     /**
