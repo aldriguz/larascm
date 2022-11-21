@@ -15,7 +15,7 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(Teacher::all());
     }
 
     /**
@@ -26,7 +26,12 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $teacher = new Teacher;
+
+        $teacher->name = $request->name; 
+        $teacher->description = $request->description;
+
+        $teacher->save();
     }
 
     /**
@@ -37,7 +42,9 @@ class TeacherController extends Controller
      */
     public function show($id)
     {
-        //
+        $teacher = Teacher::find($id);
+
+        return response()->json($teacher);
     }
 
     /**
@@ -49,7 +56,14 @@ class TeacherController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $teacher = Teacher::find($id);
+
+        $teacher->name = $request->name; 
+        $teacher->description = $request->description;
+
+        $teacher->save();
+
+        return response()->json($teacher);
     }
 
     /**
@@ -60,6 +74,10 @@ class TeacherController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $teacher = Teacher::find($id);
+
+        $teacher->delete();
+
+        return response(200);
     }
 }

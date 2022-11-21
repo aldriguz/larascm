@@ -15,7 +15,7 @@ class ClassroomController extends Controller
      */
     public function index()
     {
-        return response()->json(Classroom::all());
+        return response(Classroom::all());
     }
 
     /**
@@ -32,6 +32,8 @@ class ClassroomController extends Controller
         $classroom->description = $request->description;
 
         $classroom->save();
+
+        return response(200);
     }
 
     /**
@@ -42,7 +44,9 @@ class ClassroomController extends Controller
      */
     public function show($id)
     {
-        
+        $classroom = Classroom::find($id);
+
+        return response()->json($classroom);
     }
 
     /**
@@ -54,7 +58,14 @@ class ClassroomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $classroom = Classroom::find($id);
+
+        $classroom->name = $request->name; 
+        $classroom->description = $request->description;
+
+        $classroom->save();
+
+        return response()->json($classroom);
     }
 
     /**
@@ -65,6 +76,10 @@ class ClassroomController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $classroom = Classroom::find($id);
+
+        $classroom->delete();
+
+        return response(200);
     }
 }

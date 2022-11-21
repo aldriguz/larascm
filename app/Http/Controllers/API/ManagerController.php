@@ -15,7 +15,7 @@ class ManagerController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(Manager::all());
     }
 
     /**
@@ -26,7 +26,12 @@ class ManagerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $manager = new Manager;
+
+        $manager->name = $request->name; 
+        $manager->description = $request->description;
+
+        $manager->save();
     }
 
     /**
@@ -37,7 +42,9 @@ class ManagerController extends Controller
      */
     public function show($id)
     {
-        //
+        $manager = Manager::find($id);
+
+        return response()->json($manager);
     }
 
     /**
@@ -49,7 +56,14 @@ class ManagerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $manager = Manager::find($id);
+
+        $manager->name = $request->name; 
+        $manager->description = $request->description;
+
+        $manager->save();
+
+        return response()->json($manager);
     }
 
     /**
@@ -60,6 +74,10 @@ class ManagerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $manager = Manager::find($id);
+
+        $manager->delete();
+
+        return response(200);
     }
 }

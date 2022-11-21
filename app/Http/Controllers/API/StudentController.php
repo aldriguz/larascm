@@ -15,7 +15,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(Student::all());
     }
 
     /**
@@ -26,7 +26,12 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $student = new Student;
+
+        $student->name = $request->name; 
+        $student->description = $request->description;
+
+        $student->save();
     }
 
     /**
@@ -37,7 +42,9 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        $student = Student::find($id);
+
+        return response()->json($student);
     }
 
     /**
@@ -49,7 +56,14 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $student = Student::find($id);
+
+        $student->name = $request->name; 
+        $student->description = $request->description;
+
+        $student->save();
+
+        return response()->json($student);
     }
 
     /**
@@ -60,6 +74,10 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $student = Student::find($id);
+
+        $student->delete();
+
+        return response(200);
     }
 }
